@@ -109,7 +109,6 @@ $ find . | grep 찾을문자
 $ find 'pwd' -name "*.cpp$"
 : 절대경로 기준으로 cpp 스크립트 모두 추출. $는 문장마침
 $ find 'pwd' -regextype egrep -regx '*.cpp$'
-
 $ find . -empty
 : 빈 폴더 찾기
 $ find . -type f
@@ -128,5 +127,33 @@ $ find . -name "*.cpp" -ok rm -f {} \;
 $ find . ! -name 파일명 -delete
 : 해당파일을 제외하고 삭제
 
+grep
+$ grep vector *.cpp | awk -F '{ print $1 }' | sort - u
+: vector가 들어간 파일명만 추출.
+: sort -u 하므로써 중복 삭제 (unique)
+$ grep vector *.cpp -q
+$ echo $?
+: vector라는 요소가 있는 cpp 파일이 있는지 확인 (quite)
+$ grep "\<찾을문자\>" *.cpp
+: 앞뒤에 다른 문자가 붙지 않고 단어 단위로 된 애들을 찾기.
+: ex) for를 찾을 때, fork는 나오지 않도록 하고 싶을 때.
+$ grep "^\<int\>.*(.*)" *.cpp
+: 자료형이 int인 모든 함수 찾기. 와일드카드, .*
+: ^는 이 후의 문자들로 시작하는 문자열 찾기
+$ grep "std;$" *.cpp
+: $는 이 앞의 문자를 치면 문자가 끝나는 애들
+
+apropos
+$ apropos 함수
+: 함수에 대한 설명
+$ apropos 함수 -s 3
+: 3번 섹션에 대한 command를 보여줌
 
 
+locate 
+
+which
+$ which ls
+: ls 명령어가 어디있는지.
+$ which PATH
+:  
