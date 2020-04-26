@@ -2,7 +2,7 @@
 *	@file		open.c
 *	@manual		input file name using cmd arg
 *	@brief		open file with O_ flag and assign permission with file descriptor
-*	@functions  open, close, dprintf, 
+*	@functions	open, close, dprintf, 
 *
 *	@author		yamp
 *	@date		Apr 26, 2020

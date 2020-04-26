@@ -2,7 +2,7 @@
 *	@file		link.c
 *	@manual		input file name using cmd arg
 *	@brief		make general file, hard/symbolic link files	
-*	@functions  link, symlink 
+*	@functions	link, symlink 
 *
 *	@author		yamp
 *	@date		Apr 27, 2020

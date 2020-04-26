@@ -2,7 +2,7 @@
 *	@file		fseek.c
 *	@manual		input file name using cmd arg
 *	@brief		way to find position of cursor using ftell and file pointer
-*	@functions  ftell, fseek
+*	@functions	ftell, fseek
 *
 *	@author		yamp
 *	@date		Apr 26, 2020

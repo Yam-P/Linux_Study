@@ -3,7 +3,7 @@
 *	@manual		input file name using cmd arg
 *	@brief		write and read with byte unit. 
 				use sizeof() for dealing with byte. 	
-*	@functions  fwrite, fread
+*	@functions	fwrite, fread
 *
 *	@author		yamp
 *	@date		Apr 26, 2020

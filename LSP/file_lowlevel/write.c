@@ -3,7 +3,7 @@
 *	@manual		input file name using cmd arg
 *	@brief		use file descriptor, write and read with byte unit. 
 				use sizeof() for dealing with byte. 	
-*	@functions  open, close,fdopen, write, read
+*	@functions	open, close,fdopen, write, read
 *
 *	@author		yamp
 *	@date		Apr 27, 2020

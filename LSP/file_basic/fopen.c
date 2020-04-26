@@ -2,7 +2,7 @@
 *	@file		fopen.c
 *	@manual		input file name using cmd arg
 *	@brief		way to open file using file pointer, FILE *fp
-*	@functions  fopen, fclose, fputs, fgets
+*	@functions	fopen, fclose, fputs, fgets
 *
 *	@author		yamp
 *	@date		Apr 26, 2020
