@@ -60,6 +60,11 @@ static int read_file(char *target) {
 }
 
 int main (int argc, char **argv) {
+	if (argc < 2) {
+		printf("usage: Enter the document file name as an argument.\n");
+		return -1;
+	}
+
 	char *target = argv[1];
 	if (create_file(target)) {
 		printf("create_file() fail.\n");

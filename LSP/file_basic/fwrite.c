@@ -90,7 +90,12 @@ err:
 	return -1;
 }
 
-int main(int arc, char **argv) {
+int main(int argc, char **argv) {
+	if (argc < 2) {
+		printf("usage: Enter the document file name as an argument.\n");
+		return -1;
+	}
+
 	char *target = argv[1];
 	if(write_to_file(target)) {
 		printf("write_to_file() fail.\n");

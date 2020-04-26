@@ -47,7 +47,12 @@ int read_from_file(const char *target) {
 }
 
 
-int main(int arc, char **argv) {
+int main(int argc, char **argv) {
+	if (argc < 2) {
+		printf("usage: Enter the document file name as an argument.\n");
+		return -1;
+	}
+
 	char *target = argv[1];
 	printf("open '%s' file using fopen.\n\n", target);
 	// file 수행시 내용 입력

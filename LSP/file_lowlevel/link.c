@@ -33,6 +33,11 @@ char *getTitle(char *target, char *ref) {
 }
 
 int main(int argc, char **argv) {
+	if (argc < 2) {
+		printf("usage: Enter the document file name as an argument.\n");
+		return -1;
+	}
+
 	char *target = argv[1];
 	char *targetHl = getTitle(target, ".hl");
 	char *targetSl = getTitle(target, ".sl");

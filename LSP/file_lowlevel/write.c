@@ -98,6 +98,11 @@ err:
 }
 
 int main(int argc, char **argv) {
+	if (argc < 2) {
+		printf("usage: Enter the document file name as an argument.\n");
+		return -1;
+	}
+
 	char *target = argv[1];
 	struct person group[GROUP_SIZE] = {
 		{"kim", 26},

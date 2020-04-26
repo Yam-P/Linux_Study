@@ -64,8 +64,12 @@ static int append_file(char *target) {
 	return 0;
 }
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
+	if (argc < 2) {
+		printf("usage: Enter the document file name as an argument.\n");
+		return -1;
+	}
+
 	char *target = argv[1];
 	if (write_file(target)) {
 		printf("write_file() fail.\n");
