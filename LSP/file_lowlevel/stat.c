@@ -1,3 +1,16 @@
+/**
+*	@file		stat.c
+*	@manual		input file name you want to know static information using cmd arg
+*	@brief		use structure about static "stat", 
+*				refer to manuel to know st member :!man 2 stat
+*				refer to manuel to use S_IS~ :!man 7 inode 
+*				
+*	@functions	open, close,fdopen, write, read
+*
+*	@author		yamp
+*	@date		Apr 27, 2020
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
