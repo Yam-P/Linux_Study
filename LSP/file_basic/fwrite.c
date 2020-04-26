@@ -1,8 +1,18 @@
+/**
+*	@file		fwrite.c
+*	@manual		input file name using cmd arg
+*	@brief		write and read with byte unit. 
+				use sizeof() for dealing with byte. 	
+*	@functions  fwrite, fread
+*
+*	@author		yamp
+*	@date		Apr 26, 2020
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-char title[30] = "doc_person.txt";
+#include <unistd.h>
 
 struct person
 {
@@ -26,18 +36,17 @@ void genInfo(void) {
 	friends[1] = lee;
 }
 
-static int write_to_file(void) 
-{
+static int write_to_file(char *target) {
 	FILE *fp;
 
-	if (!(fp = fopen(title, "w"))) {
+	if (!(fp = fopen(target, "w"))) {
 		return -1;
 	}
 
 	genInfo();		
 	for (int i = 0; i < MAX_SIZE; ++i) {
-		// fwrite는 성공한 쓰기 횟수를 반환. 한번 쓰므로 1이면 만족.
-		// 기록할 데이터의 개수는 1이므로, sizeof 다음 1
+		// fwrite는 성공한 쓰기 횟수 반환. 변수 한 개를 write. 1이면 만족.
+		// 기록할 데이터의 개수는 1이므로, size 입력후 1 대입.
 		if (fwrite(&friends[i], sizeof(struct person), 1,  fp) != 1) {
 			goto err;
 		}
@@ -53,14 +62,15 @@ err:
 	return -1;
 }
 
-static int read_from_file(void) 
-{
+static int read_from_file(char *target) {
 	FILE *fp;
-	if(!(fp = fopen(title, "r"))) {
+
+	if(!(fp = fopen(target, "r"))) {
 		return -1;
 	}
 
 	struct person info[MAX_SIZE];
+	// 읽어서 info에 넣기.
 	// 두번 읽어오게 될 것.
 	if(fread(info, sizeof(struct person), MAX_SIZE, fp) != MAX_SIZE) {
 		goto err;
@@ -68,10 +78,9 @@ static int read_from_file(void)
 	
 	fclose(fp);
 
+	// display contents of file
 	for (int i = 0; i < MAX_SIZE; ++i) {
-		printf("name: %s, age: %d\n",
-				info[i].name,
-				info[i].age);
+		printf("name: %s, age: %d\n", info[i].name, info[i].age);
 	}
 
 	return 0;
@@ -81,19 +90,19 @@ err:
 	return -1;
 }
 
-int main(int arc, char **argv)
-{
-	if(write_to_file()) {
-		printf("file write fail.\n");
+int main(int arc, char **argv) {
+	char *target = argv[1];
+	if(write_to_file(target)) {
+		printf("write_to_file() fail.\n");
 		return -1;
 	}
-	printf("file write success.\n");
+	printf("write_to_file() success.\n");
 
-	if (read_from_file()) {
-		printf("file read fail.\n");
+	if (read_from_file(target)) {
+		printf("read_from_file fail.\n");
 		return -1;
 	}
-	printf("file read success.\n");
+	printf("read_from_file() success.\n");
 
 	return 0;
 }

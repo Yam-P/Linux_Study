@@ -1,3 +1,13 @@
+/**
+*	@file		open.c
+*	@manual		input file name using cmd arg
+*	@brief		open file with O_ flag and assign permission with file descriptor
+*	@functions  open, close, dprintf, 
+*
+*	@author		yamp
+*	@date		Apr 26, 2020
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,25 +18,26 @@
 #include <fcntl.h>
 
 #define TARGET_FILE "doc_open.txt"
-static int write_file(void) {
+static int write_file(char *target) {
 	int fd;
 	
-	// write only and unless file exists, create the file
-	fd = open(TARGET_FILE, O_WRONLY | O_CREAT, 0644);
+	// 파일이 존재하지 않는다면, 파일을 생성.
+	fd = open(target, O_WRONLY | O_CREAT, 0644);
 	if (fd == -1) {
 		printf("open() create fail.\n");
 		return -1;
 	}
-	dprintf(fd, "Hello World! %d\n", 123);
+
+	dprintf(fd, "Write.. Hello World! %d\n", 123);
 	close(fd);
 	return 0;
 }
 
-// 파일이 비어있지 않다면, 내용을 지우고 덮어쓰기
-static int trunc_file(void) {
+static int trunc_file(char *target) {
 	int fd;
 
-	fd = open(TARGET_FILE, O_WRONLY | O_TRUNC, 0644);
+	// 파일이 비어있지 않다면, 내용 덮어쓰기.
+	fd = open(target, O_WRONLY | O_TRUNC, 0644);
 	if (fd == -1) {
 		printf("open() trunc fail.\n");
 		return -1;
@@ -38,10 +49,10 @@ static int trunc_file(void) {
 	return 0;
 }
 
-static int append_file(void) {
+static int append_file(char *target) {
 	int fd;
 
-	fd = open(TARGET_FILE, O_WRONLY | O_APPEND, 0644);
+	fd = open(target, O_WRONLY | O_APPEND, 0644);
 	if (fd == -1) {
 		printf("open() append fail.\n");
 		return -1;
@@ -55,19 +66,20 @@ static int append_file(void) {
 
 int main(int argc, char **argv)
 {
-	if (write_file()) {
+	char *target = argv[1];
+	if (write_file(target)) {
 		printf("write_file() fail.\n");
 		return -1;
 	}
 	printf("write_file() success.\n");
 	
-	if (trunc_file()) {
+	if (trunc_file(target)) {
 		printf("trunc_file() fail.\n");
 		return -1;
 	}
 	printf("trunc_file() success.\n");
 
-	if (append_file()) {
+	if (append_file(target)) {
 		printf("append_file() fail.\n");
 		return -1;
 	}
