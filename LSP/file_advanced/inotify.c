@@ -44,13 +44,13 @@ int main(int argc, char **argv) {
 
 	int wd1 = inotify_add_watch(fd, dir1, IN_CREATE | IN_DELETE); 
 	if (wd1 == -1) {
-		printf("inotify_add_witch() about wd1 fail.\n");
+		printf("inotify_add_watch() about wd1 fail.\n");
 		goto err;
 	}
 
 	int wd2 = inotify_add_watch(fd, dir2, IN_CREATE | IN_DELETE); 
 	if (wd2 == -1) {
-		printf("inotify_add_witch() about wd2 fail.\n");
+		printf("inotify_add_watch() about wd2 fail.\n");
 		goto err;
 	}
 
