@@ -2,7 +2,7 @@
 *	@file		fork.c	
 *	@manual		
 *	@brief		show the value of pid after/before fork	
-*				in same program, you can observe carrying out 2 process
+*				in here one program, you can observe carrying out 2 process
 *	@reference	
 *	@functions	
 *
