@@ -1,0 +1,51 @@
+## Recommended Alias List ==================
+# ls
+alias ls="ls -hF --color"
+alias l="ls -l"
+alias lh="ls -lh .[a-zA-Z0-9]*"
+alias ll="ls -lh | more"
+alias lla="ls -lha"
+alias lx='ls -lXB' # 확장자별 정렬
+alias lk='ls -lSr' # 크기별
+alias la='ls -Al' # hidden file view
+alias lr='ls -lR' # 재귀적 ls
+alias lt='ls -ltr' # 날짜별 정렬
+alias tree='tree -Cs' # 'ls'
+
+## aliases for Tape-ARchive(tar)
+alias tart='tar tvzf'
+alias tarc='tar cvzf'
+alias tarx='tar xvzf'
+
+## aliases to excute specific applications
+alias man='man -a'
+alias pu='\ps u'
+alias ps='\ps -afl'
+alias pl='ps -L'
+alias cls="clear"
+alias cp="cp -i"
+alias du="du -h"
+alias df="df -kh"
+alias h="history"
+alias j='jobs -l'
+alias logs="tail -f /var/log/messages /var/log/*log"
+alias mkdir="mkdir -p"
+alias mlog="tail -100f /var/log/mail.log"
+alias mv="mv -i"
+alias path="env | grep PATH"
+alias ps="ps aux"
+alias rm="rm -i"
+alias tc="tar cfvz"
+alias tx="tar xfvz"
+alias vi="vim"
+
+# mine =====================================
+alias c="clear"
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+alias cc="gcc -Wall -Werror -Wextra"
+alias pp="g++"
+alias norminette="~/.norminette/norminette.rb"
+alias genv="python3 -m venv ./venv"
+alias begv="source ./venv/bin/activate"
+alias printFiles="ls -m | tr '\n' ' ' | sed 's/,/ \\$/g' | tr "$" "\n""
+alias open="explorer.exe"
