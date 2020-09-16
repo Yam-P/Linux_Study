@@ -49,3 +49,4 @@ alias genv="python3 -m venv ./venv"
 alias begv="source ./venv/bin/activate"
 alias printFiles="ls -m | tr '\n' ' ' | sed 's/,/ \\$/g' | tr "$" "\n""
 alias open="explorer.exe"
+alias sqlStart='sudo /etc/init.d/mysql start'
