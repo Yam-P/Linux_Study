@@ -1,4 +1,4 @@
-## Recommended Alias List ==================
+# Recommended Alias List ==================
 # ls
 alias ls="ls -hF --color"
 alias l="ls -l"

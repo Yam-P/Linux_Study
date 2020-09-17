@@ -1,6 +1,8 @@
 ## vim plugin 받는 방법
 1. vim plugin git으로부터 Vundle을 클론한다.
-   링크: git clone https://github.com/VundleVim/Vundle.vim.git
+	```
+    $ git clone https://github.com/VundleVim/Vundle.vim.git
+	```
 2. .vimrc에 위의 github 페이지에 있는 "3. Configure: " 아래 내용들을 붙인다.
 3. vim에서 :source % 와 :PluginInstall을 입력하여 .vimrc에 기입한 Plugin들을 설치한다.  
 	> 참고: 아래 플러그인들은 https://vimawesome.com/ 로부터 받아서 수행.
@@ -44,15 +46,23 @@
 2. NERDTree에서와 같이 Plugin 'valloric/youcompleteme'를 추가한다.
 3. Vundle을 받았을 때와 마찬가지로 :source % 와 :PluginInstall을 입력한다.
 4. 이 때, youcompleteme 폴더가 생성되는데, 아래로 이동한다.
-	> $ cd ~/.vim/bundle/YouCompleteMe
-	> $ sudo apt-get install -y python3-dev  
+	```
+	$ cd ~/.vim/bundle/YouCompleteMe  
+	$ sudo apt-get install -y python3-dev  
+	```
 	
 5. YouCompleteMe는 intellegence 역할을 하는 Plugin이기 때문에, 모든 컴파일러를 미리 다운 받는다.
-	> $ sudo apt-get install -y build-essential cmake gcc clang gdb 
+	```
+	$ sudo apt-get install -y build-essential cmake gcc clang gdb 
+	```
 6. install.py를 수행시키면 모든 언어에 대한 intellegence가 다운되므로, 선별하여 설치하기 위해 목록을 본다.
-	> $ python3 install.py --help
+	```
+	$ python3 install.py --help
+	```
 7. 원하는 언어를 다운 받고 싶으면 아래와 같은 명령어를 수행한다. (아래는 c, c++관련)
-	> python3 install.py --clang-completer --clangd-completer  
+	```
+	$ python3 install.py --clang-completer --clangd-completer  
+	```
 
 
 ### Tagbar  
@@ -66,7 +76,9 @@
 3. Vundle을 받았을 때와 마찬가지로 :source % 와 :PluginInstall을 입력한다.  
 	
 4. ctags라는 종속적인 패키지가 필요하므로 터미널에서 추가로 설치한다.
-	> $ sudo apt-get install ctags cscope
+	```
+	$ sudo apt-get install ctags cscope
+	```
 5. vim을 통해 파일을 열고, :Tagbar 를 입력한다.
 
 ###  VIM-AIRLINE
@@ -84,5 +96,3 @@
 - 사용 방법  
 
 1. 빔에서 여러개의 파일을 열었을 때 사용하는 명령어인 :bn 과 :bp 를 통해 다른 탭으로 이동할 수 있다.
-
-### vim
