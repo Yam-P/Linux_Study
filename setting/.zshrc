@@ -8,7 +8,7 @@
  # load a random theme each time oh-my-zsh is loaded, in which case,
  # to know which specific one was loaded, run: echo $RANDOM_THEME
  # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
- ZSH_THEME="agnoster"
+ ZSH_THEME="spaceship"
 
  # Set list of themes to pick from when loading at random
  # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,6 +70,7 @@
  # Add wisely, as too many plugins slow down shell startup.
  plugins=(git)
 
+#################################################################################
  source $ZSH/oh-my-zsh.sh
 
  # User configuration
@@ -106,9 +107,9 @@
 
 source /home/yamkim/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Homebrew Install
-test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+cd ~/AlgoMorgo/ 
+alias norminette="~/.norminette/norminette.rb"
+export USER='yekim'
+export MAIN='yekim@studet.42seoul.kr'
+#PROMPT='%F{Chartreuse3}%u: %F{green}%~ $ '
+alias norminette="~/.norminette/norminette.rb"

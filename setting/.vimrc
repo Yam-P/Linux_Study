@@ -9,28 +9,44 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 Plugin 'scrooloose/nerdtree'
-nmap <F9> :NERDTree<CR>
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
 Plugin 'airblade/vim-gitgutter'
 let g:gitgutter_max_signs = -1
+
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-nmap <C-N> :bn<CR>
-nmap <C-P> :bp<CR>
 
 call vundle#end()
 filetype plugin indent on
 
 Plugin 'blueyed/vim-diminactive'
-let g:diminactive_use_colorcolumn = 0
+let g:diminactive_enable_focus = 1
 
+Plugin 'pandark/42header.vim'
+nmap <f1> :FortyTwoHeader<CR>
+"Plugin 'terryma/vim-multiple-cursors'
+
+" my Key Binding ===============================
+nmap <F9> :NERDTree<CR>
+nmap <F8> :Tagbar<CR>
+"nmap <C-]> :bn<CR>
+"nmap <C-[> :bp<CR>
+
+nmap <C-H> <C-W>h
+nmap <C-J> <C-W>j
+nmap <C-K> <C-W>k
+nmap <C-L> <C-W>l
+nmap <A-H> <C-W><
+nmap <A-J> <C-W>+
+nmap <A-K> <C-W>-
+nmap <A-L> <C-W>>
 
 " my Setting ===================================
 set hlsearch

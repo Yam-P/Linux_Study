@@ -90,7 +90,9 @@
 	$ vim ~/.zshrc  
 	```
 5. .zshrc 적용
-	> source ~/.zshrc
+	```
+	$ source ~/.zshrc
+	```
 
 ### hilighting 플러그인 설치
 1. plugin 폴더로 이동
